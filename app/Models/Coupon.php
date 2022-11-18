@@ -12,7 +12,7 @@ class Coupon extends Model
     public $fillable = [
         'code',
         'public_price',
-        'agency_price',
+        'sale_amount',
         'paid_status',
     ];
 

@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->string('code');
             $table->decimal('public_price');
-            $table->decimal('agency_price');
+            $table->decimal('sale_amount');
             $table->decimal('sale_percentage');
             $table->decimal('paid')->default(0.00);
             $table->integer('paid_status')->default(0);
