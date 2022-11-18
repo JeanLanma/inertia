@@ -24,7 +24,7 @@ return new class extends Migration
             $table->integer('adults');
             $table->integer('minors');
             $table->integer('infants');
-            $table->text('observations');
+            $table->text('observations')->nullable();
             
             $table->foreignId('user_id')
                     ->constrained()

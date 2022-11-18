@@ -86,7 +86,7 @@ class Quote {
             'adults' => $request->adultos,
             'minors' => $request->menores,
             'infants' => $request->infantes,
-            'notes' => $request->notas ?? '',
+            'observations' => $request->notas,
             'status' => 'created',
         ];
     }
