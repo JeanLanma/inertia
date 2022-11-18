@@ -24,7 +24,7 @@ class Quote extends Model
         'adults',
         'minors',
         'infants',
-        'notes',
+        'observations',
         'status'
     ];
 
