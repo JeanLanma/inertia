@@ -13,20 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pickups', function (Blueprint $table) {
+        Schema::create('invoices', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('activity_id')
-            ->constrained()
-            ->cascadeOnUpdate()
-            ->cascadeOnDelete();
-
-            $table->foreignId('hotel_id')
-                    ->constrained()
-                    ->cascadeOnUpdate()
-                    ->cascadeOnDelete();
-
-            $table->time('pickup_time');
+            $table->string('folio');
+            $table->string('status');
 
             $table->timestamps();
         });
@@ -39,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pickups');
+        Schema::dropIfExists('invoices');
     }
 };

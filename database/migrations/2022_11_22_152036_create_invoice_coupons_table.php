@@ -13,25 +13,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('prices', function (Blueprint $table) {
+        Schema::create('invoice_coupons', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('activity_id')
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->cascadeOnDelete();
-
-        $table->foreignId('zone_id')
+            $table->foreignId('invoice_id')
                 ->nullable()
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
-
-            $table->decimal('amount');
-            
-            $table->string('season')->default('low');
-            
-            $table->string('type');
+            $table->foreignId('coupon_id')
+                ->nullable()
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
 
             $table->timestamps();
         });
@@ -44,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prices');
+        Schema::dropIfExists('invoice_coupons');
     }
 };
